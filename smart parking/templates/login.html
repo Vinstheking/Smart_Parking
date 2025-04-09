@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VSV PARK'IT - Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-image: url("{{ url_for('static', filename='bg.jpeg') }}");
+            background-size: cover;
+            background-position: center;
+        }
+        .login-container {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 400px;
+        }
+        .company-name {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .company-name h1 {
+            font-size: 36px;
+            font-weight: bold;
+            margin: 0;
+            background: linear-gradient(45deg, #2c3e50, #3498db);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .company-name p {
+            font-size: 16px;
+            color: #7f8c8d;
+            margin-top: 5px;
+        }
+        .logo {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .logo img {
+            width: 120px;
+            height: auto;
+            filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.1));
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        .form-group input:focus,
+        .form-group select:focus {
+            border-color: #3498db;
+            outline: none;
+        }
+        .submit-button {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(45deg, #2c3e50, #3498db);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .submit-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        .flash-messages {
+            margin-bottom: 20px;
+        }
+        .flash-message {
+            padding: 12px;
+            margin: 5px 0;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .flash-message.error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="company-name">
+            <h1>VSV PARK'IT</h1>
+            <p>Smart Parking Solutions</p>
+        </div>
+        <div class="logo">
+            <img src="{{ url_for('static', filename='parking-icon.png') }}" alt="Parking Logo">
+        </div>
+        
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <div class="flash-messages">
+                    {% for category, message in messages %}
+                        <div class="flash-message {{ category }}">{{ message }}</div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+
+        <form action="/" method="POST">
+            <div class="form-group">
+                <label for="role">Select Your Role:</label>
+                <select id="role" name="role" required onchange="updateLoginLabel()">
+                    <option value="">Choose Role</option>
+                    <option value="user">User</option>
+                    <option value="owner">Owner</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="rfid" id="login-label">Enter Your ID:</label>
+                <input type="text" id="rfid" name="rfid" required placeholder="Enter your ID or RFID">
+            </div>
+            <button type="submit" class="submit-button">Login</button>
+        </form>
+    </div>
+
+    <script>
+        function updateLoginLabel() {
+            const role = document.getElementById('role').value;
+            const label = document.getElementById('login-label');
+            const input = document.getElementById('rfid');
+            
+            if (role === 'owner') {
+                label.textContent = 'Enter Your Login ID:';
+                input.placeholder = 'Enter your login ID';
+            } else if (role === 'user') {
+                label.textContent = 'Enter Your RFID:';
+                input.placeholder = 'Enter your RFID number';
+            } else {
+                label.textContent = 'Enter Your ID:';
+                input.placeholder = 'Enter your ID or RFID';
+            }
+        }
+    </script>
+</body>
+</html>
