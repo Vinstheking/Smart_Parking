@@ -78,28 +78,16 @@ The Smart Parking Management System is an IoT-based project designed to efficien
 
 1. Clone the repository:
 
-   ```bash
-   git clone https://github.com/username/smart-parking-system.git
-   ```
 2. Navigate to the project directory:
 
-   ```bash
-   cd smart-parking-system
-   ```
 3. Install dependencies:
 
-   ```bash
-   pip install -r requirements.txt
-   ```
 4. Set up Firebase credentials in the project.
+
 5. Deploy the Flask app:
+   
+7. Configure ESP32 devices to connect to the MQTT broker.
 
-   ```bash
-   flask run
-   ```
-6. Configure ESP32 devices to connect to the MQTT broker.
-
----
 
 ## Usage
 
