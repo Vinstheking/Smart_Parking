@@ -37,7 +37,7 @@ The Smart Parking Management System is an IoT-based project designed to efficien
 
 * **Backend:** Flask
 * **Frontend:** HTML, CSS, JavaScript
-* **Database:** Firebase
+* **Database:** SQLite
 * **IoT Components:**
 
   * ESP32 microcontrollers
@@ -60,7 +60,7 @@ The Smart Parking Management System is an IoT-based project designed to efficien
    * A responsive web interface for owners and users.
 4. **Database:**
 
-   * Firebase stores user data, slot statuses, and transaction logs.
+   * SQL stores user data, slot statuses, and transaction logs.
 
 ---
 
