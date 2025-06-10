@@ -1,0 +1,23 @@
+RFID TAGS:
+	1-->DC 8D 0F 39
+	2-->9C BB 00 39
+	3-->73 A5 92 A9
+	4-->93 14 90 A9
+
+slot update cmd:  mosquitto_pub -h 192.168.102.42 -p 1883 -t "parking/slots" -m "1:occupied"
+slot response:->parking/slots - 1:occupied
+
+entry cmd:	mosquitto_pub -h 192.168.102.42 -p 1883 -t "parking/rfid" -m "entry:12345678"
+entry response: -> parking/gates/status - entry:open
+		-> parking/gates/status - entry:unauthorized
+
+
+
+const char* ssid = "vinstheking";
+const char* password = "56789012";
+
+mosquitto -c "C:\Program Files\mosquitto\mosquitto.conf" -v
+netstat -ano | findstr :1883
+taskkill /PID <PID> /F
+
+
