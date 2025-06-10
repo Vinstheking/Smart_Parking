@@ -70,7 +70,7 @@ The Smart Parking Management System is an IoT-based project designed to efficien
 
 * Python 3.8 or higher
 * Flask
-* Firebase Admin SDK
+* SQLite
 * MQTT broker (e.g., Mosquitto)
 * ESP32 setup with IR sensors
 
@@ -82,7 +82,7 @@ The Smart Parking Management System is an IoT-based project designed to efficien
 
 3. Install dependencies:
 
-4. Set up Firebase credentials in the project.
+4. Set up database.
 
 5. Deploy the Flask app:
    
