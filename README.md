@@ -1,90 +1,182 @@
-Car Damage Detection App
-Overview
-The Car Damage Detection App is an AI-powered application designed to identify and classify vehicle damages from images. Built using ResNet50 for transfer learning, the system is trained to recognize damage types from third-quarter front and rear views of cars. Users can simply drag and drop an image into the app, and it will instantly predict the type of damage.
+# Car Damage Detection App
 
-This project aims to assist in insurance claims, repair assessments, and automated vehicle inspections by providing quick and accurate results.
+## Overview
+The **Car Damage Detection App** is an AI-powered application that identifies and classifies vehicle damages from images.  
+Built using **ResNet50** for transfer learning, the system is trained on third-quarter front and rear views of cars.  
+Users can simply drag and drop an image into the app to instantly get the predicted damage category.  
 
-Features
-Image Upload:
-Drag-and-Drop Support: Upload car images for instant analysis.
+This project can be used for:
+- **Insurance claim processing**
+- **Repair assessments**
+- **Automated vehicle inspections**
 
-View Prediction: See the identified damage class and confidence score.
+---
 
-Damage Categories:
-Front Normal
+## Features
 
-Front Crushed
+### Image Upload
+- **Drag-and-Drop Support:** Upload car images for instant analysis.
+- **Damage Prediction:** Displays the identified damage class and confidence score.
 
-Front Breakage
+### Supported Damage Categories
+1. Front Normal  
+2. Front Crushed  
+3. Front Breakage  
+4. Rear Normal  
+5. Rear Crushed  
+6. Rear Breakage  
 
-Rear Normal
+### Performance
+- Dataset: ~1,700 images  
+- Classes: 6  
+- Accuracy: ~80% on validation set  
 
-Rear Crushed
+---
 
-Rear Breakage
+## Technology Stack
+- **Model:** ResNet50 (Transfer Learning)
+- **Language:** Python
+- **Frameworks & Libraries:** TensorFlow / Keras, Streamlit, OpenCV, NumPy
+- **Dataset:** Custom-labeled third-quarter front/rear car views
+- **Frontend:** Streamlit UI
 
-Performance:
-Trained on ~1,700 images across 6 classes.
+---
 
-Achieved ~80% accuracy on the validation set.
+## Installation and Setup
 
-Technology Stack
-Model: ResNet50 (Transfer Learning)
+### Prerequisites
+- Python 3.8 or higher
+- pip package manager
 
-Language: Python
+### Steps
+1. **Clone the repository:**
+   ```bash
+   git clone # Car Damage Detection App
 
-Frameworks & Libraries: TensorFlow / Keras, Streamlit, OpenCV, NumPy
+## Overview
+The **Car Damage Detection App** is an AI-powered application that identifies and classifies vehicle damages from images.  
+Built using **ResNet50** for transfer learning, the system is trained on third-quarter front and rear views of cars.  
+Users can simply drag and drop an image into the app to instantly get the predicted damage category.  
 
-Dataset: Custom-labeled images of third-quarter front/rear car views
+This project can be used for:
+- **Insurance claim processing**
+- **Repair assessments**
+- **Automated vehicle inspections**
 
-Frontend: Streamlit UI for easy interaction
+---
 
-Installation and Setup
-Prerequisites
-Python 3.8 or higher
+## Features
 
-pip package manager
+### Image Upload
+- **Drag-and-Drop Support:** Upload car images for instant analysis.
+- **Damage Prediction:** Displays the identified damage class and confidence score.
 
-Steps
-Clone the repository:
+### Supported Damage Categories
+1. Front Normal  
+2. Front Crushed  
+3. Front Breakage  
+4. Rear Normal  
+5. Rear Crushed  
+6. Rear Breakage  
 
-bash
-Copy
-Edit
-git clone <repository-link>
-cd car-damage-detection
-Install dependencies:
+### Performance
+- Dataset: ~1,700 images  
+- Classes: 6  
+- Accuracy: ~80% on validation set  
 
-bash
-Copy
-Edit
-pip install -r requirements.txt
-Run the app:
+---
 
-bash
-Copy
-Edit
-streamlit run app.py
-Usage
-Launch the Streamlit app in your browser.
+## Technology Stack
+- **Model:** ResNet50 (Transfer Learning)
+- **Language:** Python
+- **Frameworks & Libraries:** TensorFlow / Keras, Streamlit, OpenCV, NumPy
+- **Dataset:** Custom-labeled third-quarter front/rear car views
+- **Frontend:** Streamlit UI
 
-Drag and drop a car image (third-quarter front or rear view).
+---
 
-View the predicted damage category and confidence score.
+## Installation and Setup
 
-Future Enhancements
-Expand dataset for more vehicle models and angles.
+### Prerequisites
+- Python 3.8 or higher
+- pip package manager
 
-Improve model accuracy with fine-tuning.
+### Steps
+1. **Clone the repository:**
+   ```bash
+   git clone <repository-link>
+   cd car-damage-detection
+   ```
 
-Add bounding box detection for localized damage identification.
+2. **Install dependencies:**
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-Integrate with insurance APIs for direct claim processing.
+3. **Run the app:**
+   ```bash
+   streamlit run app.py
+   ```
+
+---
+
+## Usage
+1. Launch the Streamlit app in your browser.
+2. Drag and drop a car image (third-quarter front or rear view).
+3. View the predicted damage category and confidence score.
+
+---
+
+## Future Enhancements
+- Expand dataset for more vehicle models and angles.
+- Improve accuracy with further fine-tuning.
+- Add bounding box detection for localized damage identification.
+- Integrate with insurance APIs for direct claim processing.
+
+---
+
+## Contributing
+Contributions are welcome!  
+Fork the repository and submit a pull request for any improvements or bug fixes.
+
+---
+
+## Contact
+**Email:** [vins.techn@gmail.com](mailto:vins.techn@gmail.com)  
+**GitHub:** [Vinay's GitHub](https://github.com/Vinstheking)
+
+   cd car-damage-detection
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. **Run the app:**
+   ```bash
+   streamlit run app.py
+   ```
+
+---
+
+## Usage
+1. Launch the Streamlit app in your browser.
+2. Drag and drop a car image (third-quarter front or rear view).
+3. View the predicted damage category and confidence score.
+
+---
+
+## Future Enhancements
+- Expand dataset for more vehicle models and angles.
+- Improve accuracy with further fine-tuning.
+- Add bounding box detection for localized damage identification.
+- Integrate with insurance APIs for direct claim processing.
 
 
-Contact
-For any queries or collaboration opportunities, reach out to:
 
-Email: vins.techn@gmail.com
+---
 
-GitHub: Vinay's GitHub
+## Contact
+**Email:** [vins.techn@gmail.com](mailto:vins.techn@gmail.com)  
+**GitHub:** [Vinay's GitHub](https://github.com/Vinstheking)
